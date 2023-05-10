@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-family:'Poppins',sans-serif;
+}
+#root{
+	display:flex;
+	width:100vw;
+	height:100vh;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	background-image:url("https://wallpapercave.com/wp/wp5204110.jpg");
+	background-size:cover;
+}
+#welcome{
+	position:relative;
+	font-size:8vh;
+	color:#c3f7f8;
+	-webkit-text-stroke: 0.1vw #c3f7f8;
+}
+#welcome::before{
+	border-bottom: 1px solid #041648;
+	content: attr(data-text);
+	position:absolute;
+	top:0;
+	left:0;
+	color:#041648;
+	width:0%;
+	height:100%;
+	overflow:hidden;
+	animation-name: welcome;
+	animation-duration: 3s;
+	-webkit-text-stroke: 0.1vw #041648;
+	animation-fill-mode: forwards;
+}
+
+#form{
+	border:5px solid black;
+	background:white;
+	width:60vw;
+	height:auto;
+	max-width:400px;
+	padding:5px;
+	transform:scale(0,0);
+	animation-name:log;
+	animation-duration:3s;
+	animation-fill-mode:forwards;
+}
+#social{
+	display:flex;
+	flex-flow:column wrap;
+	align-items:center;
+	justify-content:space-around;
+}
+#button{
+	display:flex;
+	justify-content:center;
+}
+.btn{
+	width:80%;
+	display:block;
+	margin-bottom:10px;
+}
+#fb{
+	background:#3b5998;
+}
+#google{
+	background:#DB4437;
+}
+#twitter{
+	background:#00acee;
+}
+#misc{
+	display:flex;
+	flex-flow:column wrap;
+	justify-content:space-evenly;
+	align-items:center;
+}
+#misc a{
+	text-decoration: none;
+	color:dimgrey;
+}
+@keyframes welcome{
+	0%{
+		width: 0;
+	}
+	70%{
+		width:100%;
+		transform:translateY(0);
+	}
+	100%{
+		width: 100%;
+		transform: translateY(-25px);
+	}
+}
+@keyframes log{
+	70%{
+		transform:scale(0,0);
+	}
+	100%{
+		transform:scale(1.08,1.08);
+	}
+}
